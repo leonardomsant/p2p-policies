@@ -1,0 +1,4 @@
+## Append samples of your project ##
+resources:
+- p2ppolicies_v1_p2psecuritypolicy.yaml
+#+kubebuilder:scaffold:manifestskustomizesamples

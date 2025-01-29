@@ -1,0 +1,23 @@
+# permissions for end users to view p2psecuritypolicies.
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  labels:
+    app.kubernetes.io/name: p2p-policies
+    app.kubernetes.io/managed-by: kustomize
+  name: p2psecuritypolicy-viewer-role
+rules:
+- apiGroups:
+  - p2ppolicies.starlingx.windriver.com
+  resources:
+  - p2psecuritypolicies
+  verbs:
+  - get
+  - list
+  - watch
+- apiGroups:
+  - p2ppolicies.starlingx.windriver.com
+  resources:
+  - p2psecuritypolicies/status
+  verbs:
+  - get

@@ -1,0 +1,27 @@
+# permissions for end users to edit p2psecuritypolicies.
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  labels:
+    app.kubernetes.io/name: p2p-policies
+    app.kubernetes.io/managed-by: kustomize
+  name: p2psecuritypolicy-editor-role
+rules:
+- apiGroups:
+  - p2ppolicies.starlingx.windriver.com
+  resources:
+  - p2psecuritypolicies
+  verbs:
+  - create
+  - delete
+  - get
+  - list
+  - patch
+  - update
+  - watch
+- apiGroups:
+  - p2ppolicies.starlingx.windriver.com
+  resources:
+  - p2psecuritypolicies/status
+  verbs:
+  - get

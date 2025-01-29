@@ -1,0 +1,21 @@
+apiVersion: p2ppolicies.starlingx.windriver.com/v1
+kind: P2PSecurityPolicy
+metadata:
+  labels:
+    app.kubernetes.io/name: p2p-policies
+    app.kubernetes.io/managed-by: kustomize
+  name: p2psecuritypolicy-sample
+spec:
+  nodes:
+    - controller-0#192.168.206.2#172.16.192.64/26
+    - controller-1#192.168.206.3#172.16.166.128/26
+    - worker-0#192.168.206.70#172.16.226.64/26
+    - worker-1#192.168.206.71#172.16.227.64/26
+  policies:
+    - udp/20019-20022
+    - udp/20024
+    - tcp/20025-20029
+    - tcp/8081
+  protocols:
+    - icmp
+    - rip
