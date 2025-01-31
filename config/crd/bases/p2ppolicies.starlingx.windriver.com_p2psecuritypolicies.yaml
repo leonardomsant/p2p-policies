@@ -58,6 +58,10 @@ spec:
             type: object
           status:
             description: P2PSecurityPolicyStatus defines the observed state of P2PSecurityPolicy
+            properties:
+              lastUpdated:
+                format: date-time
+                type: string
             type: object
         type: object
     served: true

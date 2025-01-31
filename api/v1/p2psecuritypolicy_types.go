@@ -32,8 +32,7 @@ type P2PSecurityPolicySpec struct {
 
 // P2PSecurityPolicyStatus defines the observed state of P2PSecurityPolicy
 type P2PSecurityPolicyStatus struct {
-	// INSERT ADDITIONAL STATUS FIELD - define observed state of cluster
-	// Important: Run "make" to regenerate code after modifying this file
+	LastUpdated metav1.Time `json:"lastUpdated,omitempty"`
 }
 
 //+kubebuilder:object:root=true
